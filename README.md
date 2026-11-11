@@ -110,4 +110,14 @@ dotenv.config();
 export const pool = new Pool({
   connectionString: process.env.DATABASE_URL,
   ssl: process.env.NODE_ENV === 'production' ? { rejectUnauthorized: false } : false,
-});
+});export type ServiceRequestInput = {
+  clientName: string;
+  clientPhone: string;
+  preferredLanguage: string;
+  serviceId: number;
+  quartier?: string;
+  address?: string;
+  description: string;
+  proposedPrice?: string;
+  paymentMethod?: string;
+};
