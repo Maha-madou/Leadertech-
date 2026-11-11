@@ -102,3 +102,12 @@ VALUES
 ('Installation antenne parabolique', 'Installation et réglage d''antenne', 'antenne', true, 'Prix à confirmer selon l''installation'),
 ('Installation Starlink', 'Installation et mise en service Starlink', 'starlink', true, 'Prix à confirmer selon l''installation'),
 ('Livraison', 'Livraison de colis ou matériels', 'delivery', true, 'Frais à convenir selon la destination');
+import { Pool } from 'pg';
+import dotenv from 'dotenv';
+
+dotenv.config();
+
+export const pool = new Pool({
+  connectionString: process.env.DATABASE_URL,
+  ssl: process.env.NODE_ENV === 'production' ? { rejectUnauthorized: false } : false,
+});
