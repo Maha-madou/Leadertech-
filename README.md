@@ -121,3 +121,14 @@ export const pool = new Pool({
   proposedPrice?: string;
   paymentMethod?: string;
 };
+export type ServiceRequestInput = {
+  clientName: string;
+  clientPhone: string;
+  preferredLanguage: string;
+  serviceId: number;
+  quartier?: string;
+  address?: string;
+  description: string;
+  proposedPrice?: string;
+  paymentMethod?: string;
+};
